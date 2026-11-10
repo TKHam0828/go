@@ -4,7 +4,7 @@
 <script src="../log.js"></script>
 <script>
 var TO = "https://dihabooks.com/book/ebook-cayanne?utm_source=freebook_pdf&utm_medium=pdf&utm_campaign=launch_2611&utm_content=after_launch", L = "pdfl";
-try { if (window.LOG_URL) fetch(LOG_URL + '?l=' + encodeURIComponent(L) + '&r=' + encodeURIComponent(document.referrer || ''), {mode: 'no-cors', keepalive: true}); } catch (e) {}
-setTimeout(function () { location.replace(TO); }, window.LOG_URL ? 300 : 0);
+try { if (window.LOG) LOG(L); } catch (e) {}
+setTimeout(function () { location.replace(TO); }, window.LOG ? 300 : 0);
 </script></head>
 <body style="font-family:sans-serif;padding:40px;text-align:center;color:#333">잠시만요, 이동 중입니다…<br><a href="https://dihabooks.com/book/ebook-cayanne?utm_source=freebook_pdf&amp;utm_medium=pdf&amp;utm_campaign=launch_2611&amp;utm_content=after_launch">바로 가기</a></body></html>
