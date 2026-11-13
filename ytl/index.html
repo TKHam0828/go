@@ -6,6 +6,9 @@
 <script src="../log.js"></script>
 <script>
 var TO = "https://docs.google.com/forms/d/e/1FAIpQLSeo5TA9eCQERyTnENrumhzH5fmZ85nkgyPXUnxq9lNn6yjQXw/viewform?usp=pp_url&entry.66588747=%EC%9C%A0%ED%8A%9C%EB%B8%8C-%EB%A1%B1%ED%8F%BC%EC%84%A4%EB%AA%85", L = "ytl";
+// 11/13: 받는 사람별 추적 — ?r=추적번호(메일 주소를 바꾼 무작위 8자, 개인정보 아님)가 있으면 기록에 「키#번호」, 책 주소에 utm_term=r_번호
+try { var R = (new URLSearchParams(location.search).get('r') || '').replace(/[^a-z0-9]/gi, '').slice(0, 12);
+      if (R) { L = L + '#' + R; TO = TO + (TO.indexOf('?') < 0 ? '?' : '&') + 'utm_term=r_' + R; } } catch (e) {}
 try { if (window.LOG) LOG(L); } catch (e) {}
 setTimeout(function () { location.replace(TO); }, window.LOG ? 300 : 0);
 </script></head>

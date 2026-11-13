@@ -6,6 +6,9 @@
 <script src="../log.js"></script>
 <script>
 var TO = "https://dihabooks.com/book/ebook-cayanne?utm_source=freebook_pdf&utm_medium=pdf&utm_campaign=launch_2611", L = "pdf";
+// 11/13: 받는 사람별 추적 — ?r=추적번호(메일 주소를 바꾼 무작위 8자, 개인정보 아님)가 있으면 기록에 「키#번호」, 책 주소에 utm_term=r_번호
+try { var R = (new URLSearchParams(location.search).get('r') || '').replace(/[^a-z0-9]/gi, '').slice(0, 12);
+      if (R) { L = L + '#' + R; TO = TO + (TO.indexOf('?') < 0 ? '?' : '&') + 'utm_term=r_' + R; } } catch (e) {}
 try { if (window.LOG) LOG(L); } catch (e) {}
 setTimeout(function () { location.replace(TO); }, window.LOG ? 300 : 0);
 </script></head>
